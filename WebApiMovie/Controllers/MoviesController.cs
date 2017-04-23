@@ -12,17 +12,22 @@ namespace WebApiMovie.Controllers
 {
     public class MoviesController : ApiController
     {
-        private MovieDBContext db = new MovieDBContext();
+        private MovieDBContext _db;
 
-        public MoviesController(MovieDBContext context)
+        public MoviesController()
         {
-            db = context;
+            this._db = new MovieDBContext();
+        }
+
+        public MoviesController(MovieDBContext db)
+        {
+            this._db = db;
         }
 
         public IEnumerable<Movie> Get()
         {
 
-            var movies = from m in db.Movies
+            var movies = from m in this._db.Movies
                          select m;
         
             return movies;
@@ -30,28 +35,28 @@ namespace WebApiMovie.Controllers
 
         public Movie Get(int id)
         {
-            Movie movie = db.Movies.Find(id);
+            Movie movie = this._db.Movies.Find(id);
 
             return movie;
         }
 
         public void Post([FromBody]Movie movie)
         {
-            db.Movies.Add(movie);
-            db.SaveChanges();
+            this._db.Movies.Add(movie);
+            this._db.SaveChanges();
         }
 
         public void Put([FromBody]Movie movie)
         {
-            db.Entry(movie).State = EntityState.Modified;
-            db.SaveChanges();
+            this._db.Entry(movie).State = EntityState.Modified;
+            this._db.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            Movie movie = db.Movies.Find(id);
-            db.Movies.Remove(movie);
-            db.SaveChanges();
+            Movie movie = this._db.Movies.Find(id);
+            this._db.Movies.Remove(movie);
+            this._db.SaveChanges();
         }
 
         public HttpResponseMessage Options()
