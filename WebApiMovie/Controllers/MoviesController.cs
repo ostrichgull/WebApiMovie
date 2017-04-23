@@ -13,7 +13,12 @@ namespace WebApiMovie.Controllers
     public class MoviesController : ApiController
     {
         private MovieDBContext db = new MovieDBContext();
-        
+
+        public MoviesController(MovieDBContext context)
+        {
+            db = context;
+        }
+
         public IEnumerable<Movie> Get()
         {
 
@@ -42,12 +47,11 @@ namespace WebApiMovie.Controllers
             db.SaveChanges();
         }
 
-        // DELETE api/values/5
         public void Delete(int id)
         {
-            System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\dev\\debug.txt");
-            file.WriteLine("Delete");
-            file.Close();
+            Movie movie = db.Movies.Find(id);
+            db.Movies.Remove(movie);
+            db.SaveChanges();
         }
 
         public HttpResponseMessage Options()

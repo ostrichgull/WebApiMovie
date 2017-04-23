@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiMovie", "WebApiMovie\WebApiMovie.csproj", "{7BE68E44-4655-474E-A221-14542FF44594}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiMovieTests", "WebApiMovieTests\WebApiMovieTests.csproj", "{762F1EBE-E219-447B-AB93-E12D1EC5EE3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7BE68E44-4655-474E-A221-14542FF44594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BE68E44-4655-474E-A221-14542FF44594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BE68E44-4655-474E-A221-14542FF44594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{762F1EBE-E219-447B-AB93-E12D1EC5EE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{762F1EBE-E219-447B-AB93-E12D1EC5EE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{762F1EBE-E219-447B-AB93-E12D1EC5EE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{762F1EBE-E219-447B-AB93-E12D1EC5EE3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
